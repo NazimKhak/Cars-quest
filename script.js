@@ -45,18 +45,23 @@ function createlist() {
   addEventListeners();
 }
 
+function dragStart() {
+  dragStartIndex = +this.closest("li").getAttribute("data-index");
+}
+
 function addEventListeners() {
   const draggables = document.querySelector(".draggable");
   const dragListItems = document.querySelector(".draggable-list li");
-  draggables.forEach((item) => {
-    item.addEventListener(dragover);
-  });
-
-  dragListItems.forEach((item) => {
-    item.addEventListener("dragover", dragOVer);
-    item.addEventListener("drop", dragDrop);
-    item.addEventListener("dragenter", dragEnter);
-    item.addEventListener("dragleave", dragLeave);
+  draggables.forEach((draggable) => {
+    draggable.addEventListener("dragstart", dragStart);
   });
 }
+
+dragListItems.forEach((item) => {
+  item.addEventListener("dragover", dragOVer);
+  item.addEventListener("drop", dragDrop);
+  item.addEventListener("dragenter", dragEnter);
+  item.addEventListener("dragleave", dragLeave);
+});
+
 check.addEventListener("click", checkOrder);
