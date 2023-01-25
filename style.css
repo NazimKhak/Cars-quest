@@ -1,14 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 :root {
   --border-color: #e3e5e4;
-  --backgruond-color: #008df9;
+  --backgruond-color: #2bb6e0;
   --text-color: #34444f;
+  --button-color: #b0cc15;
 }
 * {
   box-sizing: border-box;
 }
 body {
-  background-color: #fff;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,10 +18,30 @@ body {
   margin: 0;
   font-family: "Prompt";
 }
+body::after {
+  content: "";
+  background-image: url("./images/Pagani-zonda.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  opacity: 0.75;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+.description_of_quest {
+  font-size: 22px;
+  margin-top: 0;
+}
 .draggable-list {
   border: 1px solid var(--border-color);
   color: var(--text-color);
   list-style-type: none;
+  padding-left: 0;
+  margin-top: 0;
 }
 .draggable-list li {
   background-color: #fff;
@@ -45,7 +66,7 @@ body {
 .draggable-list .person-name {
   margin: 0 20px 0 0;
 }
-.draggable-list li.rigth .person-name {
+.draggable-list li.right .person-name {
   color: #3ae374;
 }
 .draggable-list li.wrong .person-name {
@@ -64,7 +85,7 @@ body {
 }
 
 .check-btn {
-  background-color: var(--backgruond-color);
+  background-color: var(--button-color);
   bottom: none;
   color: var(--text-color);
   font-size: 16px;
@@ -74,9 +95,12 @@ body {
   border-radius: 10px;
 }
 .check-btn:active {
-  transform: scale(0.96);
+  transform: scale(0.9);
 }
-
 .check-btn:focus {
   outline: none;
+}
+.button_container {
+  gap: 20px;
+  display: flex;
 }
