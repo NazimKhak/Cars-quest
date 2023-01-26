@@ -63,13 +63,13 @@ body::after {
   width: 60px;
 }
 
-.draggable-list .person-name {
+.draggable-list .car-name {
   margin: 0 20px 0 0;
 }
-.draggable-list li.right .person-name {
+.draggable-list li.right .car-name {
   color: #3ae374;
 }
-.draggable-list li.wrong .person-name {
+.draggable-list li.wrong .car-name {
   color: #ff3838;
 }
 .draggable-list li.over .draggable {
